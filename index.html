@@ -1,69 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KALRO — Kenya Agricultural & Livestock Research Organisation</title>
-  <meta name="description" content="KALRO — Research, innovation and translation in agriculture and livestock to improve livelihoods and food security in Kenya." />
-  <meta name="author" content="KALRO" />
-  <link
-    rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234c9a2a'/><text x='50' y='58' font-size='42' text-anchor='middle' fill='white' font-family='Arial'>K</text></svg>"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KALRO – Kenya Agricultural & Livestock Research Organisation</title>
 
   <style>
     :root {
-      --accent: #4c9a2a;
-      --dark: #2f3e1f;
-      --muted: #7b8b6f;
-      --glass: rgba(255, 255, 255, 0.09);
-      --maxw: 1200px;
-      --radius: 14px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-        'Helvetica Neue', Arial;
+      --accent: #0a7e07;
+      --accent-light: #4c9a2a;
+      --dark: #1a1a1a;
+      --muted: #666;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+      --maxw: 1100px;
     }
-
-    * { box-sizing: border-box; }
-
-    html, body { height: 100%; }
 
     body {
       margin: 0;
-      padding-top: 110px;
-      background: linear-gradient(180deg, #fcfdf7 0%, #eef7e5 60%);
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f7faf7;
       color: var(--dark);
-      line-height: 1.45;
-      font-size: 16px;
+      line-height: 1.6;
     }
 
-    .container {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 28px;
-      width: 100%;
-    }
-
+    /* ONLY CHANGE: more translucent header */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
       position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(14px);
       padding: 16px 28px;
       z-index: 999;
-      box-shadow: 0 4px 12px rgba(76,154,42,0.18);
+      box-shadow: 0 4px 12px rgba(76, 154, 42, 0.18);
     }
 
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .logo {
-      width: 56px; height: 56px; border-radius: 12px;
-      background: var(--accent); display: flex; align-items: center;
-      justify-content: center; color: white; font-weight: 700;
-      font-size: 22px; box-shadow: rgba(76,154,42,0.25) 0 6px 18px;
-    }
+    header h1 { margin: 0; font-size: 28px; font-weight: 800; color: var(--accent);}
 
     nav a {
       margin-left: 16px;
@@ -72,317 +50,191 @@
       font-weight: 600;
     }
 
-    .cta {
-      background: var(--accent);
-      color: white;
-      padding: 10px 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
+    .container {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: auto;
+      padding: 20px;
+      padding-top: 120px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px; margin-top: 22px;
-    }
-
-    .card {
-      background: white; padding: 18px; border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(76, 154, 42, 0.08);
+    h2 {
+      font-size: 32px;
+      margin-top: 40px;
+      color: var(--accent);
       text-align: center;
     }
 
-    .card img {
-      width: 100%; height: 150px; object-fit: cover;
-      border-radius: 10px;
+    .section {
+      margin-top: 40px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
     }
 
-    /* BUY NOW BUTTON */
-    .buy-btn {
-      margin-top: 12px;
+    .section h3 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
       width: 100%;
-      padding: 10px;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 15px;
-      transition: 0.2s;
+      max-width: 280px;
+      text-align: center;
+      transition: 0.25s;
     }
-    .buy-btn:hover { background: #3f7d22; }
 
-    footer {
-      margin-top: 34px;
-      padding: 22px;
-      border-top: 1px solid rgba(47, 62, 31, 0.08);
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 9999;
+    }
+
+    .whatsapp-btn img {
+      width: 35px;
+      height: 35px;
     }
   </style>
+
 </head>
 
 <body>
-  <div class="container">
 
-    <header>
-      <div class="brand">
-        <div class="logo">KA</div>
-        <div>
-          <h1>KALRO</h1>
-          <p>Kenya Agricultural &amp; Livestock Research Organisation</p>
-        </div>
+  <header>
+      <div class="header-logo" style="display:flex;align-items:center;gap:10px;">
+        <img src="logo.png" alt="KALRO Logo" style="height:60px;width:auto;border-radius:8px;" />
       </div>
-    </header>
+    <h1>KALRO</h1>
+    <nav>
+      <a href="#livestock">Livestock</a>
+    </nav>
+  </header>
 
-    <main>
+  <main class="container">
 
-      <!-- PURE DOPER -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>PURE DOPER</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="pu01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Pure%20Doper','_blank')">
-              BUY NOW
-            </button>
-          </div>
+    <h2 id="livestock">Livestock Research Breeds</h2>
 
-          <div class="card">
-            <img src="pu02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Pure%20Doper','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- JERSEY HEIFERS -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>JERSEY HEIFERS</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="je01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Jersey%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="je02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Jersey%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- FRESHIAN HEIFERS -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>FRESHIAN HEIFERS</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="fr01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Freshian%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="fr02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Freshian%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- FLECKVIEW -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>FLECKVIEW HEIFERS</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="fl01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Fleckview%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="fl02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Fleckview%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- CALVES -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>CALVES</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="ca1.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Calves','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="ca2.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Calves','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- DORPER -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>PURE DORPER SHEEP</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="pu02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dorper%20Sheep','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="pu01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dorper%20Sheep','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- HAMPSHIRE -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>HAMPSHIRE SHEEP</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="ha1.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Hampshire%20Sheep','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="ha1.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Hampshire%20Sheep','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- DAIRY GOATS -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>DAIRY GOATS</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="da1.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dairy%20Goats','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="da02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dairy%20Goats','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- BOER GOAT -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>BOER GOAT</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="bo02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Boer%20Goat','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="bo01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Boer%20Goat','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div>
-        <strong>KALRO</strong>
-        <div class="muted">Location : Naivasha , Nakuru</div>
-        <div class="muted" style="margin-top: 8px; font-size: 13px">
-          Phone: +254 762457938 &nbsp; | &nbsp; Email: kalrofarmkenya@gmail.com
-        </div>
+    <!-- Dairy cattle -->
+    <section class="section">
+      <h3>Dairy Cattle</h3>
+      <div class="cards">
+        <div class="card"><img src="img1.jpg" alt=""></div>
+        <div class="card"><img src="img2.jpg" alt=""></div>
+        <div class="card"><img src="img3.jpg" alt=""></div>
       </div>
+    </section>
 
-      <div class="muted" style="margin-top: 10px; font-size: 13px">
-        © <span id="year"></span> KALRO. All rights reserved.
+    <!-- Beef cattle -->
+    <section class="section">
+      <h3>Beef Cattle</h3>
+      <div class="cards">
+        <div class="card"><img src="img4.jpg" alt=""></div>
+        <div class="card"><img src="img5.jpg" alt=""></div>
       </div>
-    </footer>
+    </section>
 
-  </div>
+    <!-- Sheep -->
+    <section class="section">
+      <h3>Sheep</h3>
+      <div class="cards">
+        <div class="card"><img src="img6.jpg" alt=""></div>
+        <div class="card"><img src="img7.jpg" alt=""></div>
+      </div>
+    </section>
 
-  <!-- FLOATING WHATSAPP ICON -->
-  <a href="https://wa.me/254762457938"
-     target="_blank"
-     style="
-       position: fixed;
-       bottom: 20px;
-       right: 20px;
-       background: #25d366;
-       width: 58px;
-       height: 58px;
-       border-radius: 50%;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-       z-index: 9999;
-     ">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-         alt="WhatsApp"
-         style="width: 34px; height: 34px;" />
+    <!-- Goats -->
+    <section class="section">
+      <h3>Goats</h3>
+      <div class="cards">
+        <div class="card"><img src="img8.jpg" alt=""></div>
+        <div class="card"><img src="img9.jpg" alt=""></div>
+      </div>
+    </section>
+
+    <!-- Poultry -->
+    <section class="section">
+      <h3>Poultry</h3>
+      <div class="cards">
+        <div class="card"><img src="img10.jpg" alt=""></div>
+        <div class="card"><img src="img11.jpg" alt=""></div>
+        <div class="card"><img src="img12.jpg" alt=""></div>
+      </div>
+    </section>
+
+    <!-- Rabbits -->
+    <section class="section">
+      <h3>Rabbits</h3>
+      <div class="cards">
+        <div class="card"><img src="img13.jpg" alt=""></div>
+        <div class="card"><img src="img14.jpg" alt=""></div>
+      </div>
+    </section>
+
+    <!-- Fish -->
+    <section class="section">
+      <h3>Fish</h3>
+      <div class="cards">
+        <div class="card"><img src="img15.jpg" alt=""></div>
+        <div class="card"><img src="img16.jpg" alt=""></div>
+      </div>
+    </section>
+
+    <!-- Donkeys -->
+    <section class="section">
+      <h3>Donkeys</h3>
+      <div class="cards">
+        <div class="card"><img src="img17.jpg" alt=""></div>
+      </div>
+    </section>
+
+    <!-- Camels -->
+    <section class="section">
+      <h3>Camels</h3>
+      <div class="cards">
+        <div class="card"><img src="img18.jpg" alt=""></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating WhatsApp Icon -->
+  <a class="whatsapp-btn" href="https://wa.me/254762457938" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
-
-
-
