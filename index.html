@@ -1,384 +1,197 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KALRO — Kenya Agricultural & Livestock Research Organisation</title>
-  <meta name="description" content="KALRO — Research, innovation and translation in agriculture and livestock to improve livelihoods and food security in Kenya." />
-  <meta name="author" content="KALRO" />
-  <link
-    rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234c9a2a'/><text x='50' y='58' font-size='42' text-anchor='middle' fill='white' font-family='Arial'>K</text></svg>"
-  />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
- <style>:
-   root { --accent: #4c9a2a; --dark: #2f3e1f; --muted: #7b8b6f; --glass: rgba(255, 255, 255, 0.09); --maxw: 1200px; --radius: 14px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; } * { box-sizing: border-box; } html, body { height: 100%; }
-   body { margin: 0; padding-top: 110px; background: linear-gradient(180deg, #fcfdf7 0%, #eef7e5 60%); color: darkgreen; line-height: 1.45; font-size: 20px; } 
-   .container { max-width: var(--maxw); margin: 0 auto; padding: 28px; width: 100%; }
-   header { display: flex; align-items: center; justify-content: space-between; gap: 10px; position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); padding: 2px 5px; z-index: 999; box-shadow: 0 4px 12px rgba(76,154,42,0.18); } 
-   .brand { display: flex; align-items: center; gap: 12px; } 
-   .logo { width: 56px; height: 56px; border-radius: 12px; background: var(--accent); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 22px; box-shadow: rgba(76,154,42,0.25) 0 6px 18px; }
-   nav a { margin-left: 16px; text-decoration: none; color: var(--dark); font-weight: 600; }
-   .cta { background: var(--accent); color: white; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 700; } 
-   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 22px; } 
-   .card { background: white; padding: 18px; border-radius: 14px; box-shadow: 0 8px 20px rgba(76, 154, 42, 0.08); text-align: center; } 
-   .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; } 
-   /* BUY NOW BUTTON */ .buy-btn { margin-top: 12px; width: 100%; padding: 10px; background: #35751aff; color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 15px; transition: 0.2s; } .buy                                                                                                       -btn:hover { background: #3f7d22; } footer { margin-top: 34px; padding: 22px; border-top: 1px solid rgba(47, 62, 31, 0.08); display: flex; justify-content: space-between; }
-   /* Floating Red Call Button */
-/* Floating Red Call Button */
-.kalro-call-btn {
-    position: fixed;
-    bottom: 100px;       /* sits ABOVE WhatsApp button */
-    right: 25px;         /* now on the RIGHT side */
-    width: 50px;
-    height: 50px;
-    width: 55px;
-    height: 55px;
-    background: #d60000;   /* 🔴 red background */
-    border-radius: 50%;
-    color: white;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.4);
-    z-index: 2000;
-    transition: 0.25s;
+<title>KALRO — Livestock Sales</title>
+
+<style>
+:root{
+  --accent:#4c9a2a;
+  --dark:#2f3e1f;
+  --maxw:1200px;
 }
 
-.kalro-call-btn:hover {
-    background: #a80000; /* darker red */
-    transform: scale(1.08);
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  padding-top:100px;
+  font-family:system-ui,Segoe UI,Arial;
+  background:linear-gradient(180deg,#fcfdf7,#eef7e5);
+  color:darkgreen;
 }
 
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  background:#ffffffee;
+  backdrop-filter:blur(8px);
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:10px 20px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  z-index:999;
+}
 
+.logo img{
+  width:60px;
+  height:60px;
+  border-radius:10px;
+}
+
+.cta{
+  margin-left:auto;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.container{
+  max-width:var(--maxw);
+  margin:auto;
+  padding:24px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:16px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.card h4{
+  margin:10px 0 6px;
+}
+
+.card p{
+  font-size:15px;
+  margin:0 0 8px;
+}
+
+.price{
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.buy-btn{
+  width:100%;
+  padding:10px;
+  background:#35751a;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+footer{
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #ccc;
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+}
+
+.kalro-call-btn{
+  position:fixed;
+  right:25px;
+  bottom:100px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#d60000;
+  color:white;
+  font-size:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  z-index:2000;
+}
 </style>
-
 </head>
 
 <body>
-  <div class="container">
 
-    <header>
-      <div class="brand">
-        <div class="logo"><img style="width: 70px; height: 70px; border-radius: 10px;" src="logo.jfif"></div>
-
-
-
-        <div>
-          <h1>KALRO</h1>
-          <p>Kenya Agricultural &amp; Livestock Research Organisation</p>
-        </div>
-      </div>
-    </header>
-<!-- INSERT CALL BUTTON HERE -->
-<!-- FLOATING CALL KALRO BUTTON -->
-<a href="tel:0762457938?" class="kalro-call-btn">
-    📞
-</a>
-
-    <main>
-
-
-
-      <!-- PURE DOPER -->
-      <section class="hero-card" style="margin-top: 18px">
-           <div class="section">
-             <br><br><br>
-        <h2>Our Livestock Categories</h2>
-        <ul>
-          <a href="admin.html" class="cta" style="margin-left:auto;">
-  Admin
-</a>
-            <li>Pure healthy calves (4–7 months)</li>
-            <li>Registered Dorper lambs</li>
-            <li>Dorper rams (ready to serve)</li>
-            <li>Second-calving Fresian dairy cows</li>
-            <li>Quality dairy goats</li>
-        </ul>
-    </div>
-        <h3>PURE DOPER</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="pu01.jfif" />
-            <button class="buy-btn"onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Pure%20Doper','_blank')">
-
-
-              BUY NOW
-
-
-            </button>
-             <div class="price-tag">KSh 6k–10k • 3–5 months</div>
-          </div>
-
-          <div class="card">
-            <img src="pu02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Pure%20Doper','_blank')">
-              BUY NOW
-            </button>
-            <div class="price-tag">KSh 6k–10k • 3–5 months</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- JERSEY HEIFERS -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>JERSEY HEIFERS</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="je01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Jersey%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="je02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Jersey%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- FRESHIAN HEIFERS -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>FRESHIAN HEIFERS</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="fr01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Freshian%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="fr02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Freshian%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- FLECKVIEW -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>FLECKVIEW HEIFERS</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="fl01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Fleckview%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-
-          <div class="card">
-            <img src="fl02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Fleckview%20Heifers','_blank')">
-              BUY NOW
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- CALVES -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>CALVES</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="ca1.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Calves','_blank')">
-              BUY NOW
-            </button>
-             <div>7-10 months 25k to 50k </div>
-          </div>
-
-          <div class="card">
-            <img src="ca2.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Calves','_blank')">
-              BUY NOW
-            </button>
-             <div>7-10 months 25k to 50k </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- DORPER -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>PURE DORPER SHEEP</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="pu02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dorper%20Sheep','_blank')">
-              BUY NOW
-            </button>
-             <div>available 10k-50k</div>
-          </div>
-
-          <div class="card">
-            <img src="pu01.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dorper%20Sheep','_blank')">
-              BUY NOW
-            </button>
-             <div>available 10k-50k</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- HAMPSHIRE -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>HAMPSHIRE SHEEP</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="ha1.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Hampshire%20Sheep','_blank')">
-              BUY NOW
-            </button>
-            <div>3-5 months 6k-11k</div>
-          </div>
-
-          <div class="card">
-            <img src="ha1.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Hampshire%20Sheep','_blank')">
-              BUY NOW
-            </button>
-             <div>3-5 months 6k-11k</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- DAIRY GOATS -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>DAIRY GOATS</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="da1.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dairy%20Goats','_blank')">
-              BUY NOW
-            </button>
-             <div>11k to 30k </div>
-          </div>
-
-          <div class="card">
-            <img src="da02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dairy%20Goats','_blank')">
-              BUY NOW
-            </button>
-             <div>11k to 30k </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- BOER GOAT -->
-      <section class="hero-card" style="margin-top: 18px">
-        <h3>BOER GOAT</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="bo02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Boer%20Goat','_blank')">
-              BUY NOW
-            </button>
-              <div class="price-tag">*Boer Goats for Sale. 
-
-<br>- *Kids (3 up to 7 months old):* KSh 7,000
-<br>- *Young Goats (8-11 months old):* KSh 15,000
-<br>- *Sub-adults (12 -16 months old):* KSh 30,000
-</div>
-          </div>
-
-
-          </div>
-            <section class="hero-card" style="margin-top: 18px">
-        <h3>Pure bhoma Rhodes hay</h3>
-        <div class="grid">
-          <div class="card">
-            <img src="pure lucerne 02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dairy%20Goats','_blank')">
-              BUY NOW
-            </button>
-            Pure Lucerne alfafa (25kg) bale @400/-farm price!
--Pure bhoma Rhodes hay(18kg) bale @200/-farm price!
-- Lucerne pellets/seeds @1000/-per kg
--Bhoma Rhodes seeds @400/-per kg
-
-             <div>11k to 30k </div>
-          </div>
-           <div class="card">
-            <img src="pure lucerne 02.jfif" />
-            <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Boer%20Goat','_blank')">
-              BUY NOW
-            </button>
-              <div class="price-tag">  Pure Lucerne alfafa (25kg) bale @400/-farm price!
--Pure bhoma Rhodes hay(18kg) bale @200/-farm price!
-- Lucerne pellets/seeds @1000/-per kg
--Bhoma Rhodes seeds @400/-per kg
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div>
-        <strong>KALRO</strong>
-        <div class="muted">Location: Naivasha, Nakuru</div>
-        <div class="muted" style="margin-top: 8px; font-size: 13px">
-          Phone: +254 762457938 &nbsp; | &nbsp; Email: kalrofarmkenya@gmail.com
-        </div>
-      </div>
-
-      <div class="muted" style="margin-top: 10px; font-size: 13px">
-        © <span id="year"></span> KALRO. All rights reserved.
-      </div>
-    </footer>
-
+<header>
+  <div class="logo">
+    <img src="logo.jfif">
   </div>
+  <div>
+    <strong>KALRO</strong><br>
+    <small>Kenya Agricultural & Livestock Research Organisation</small>
+  </div>
+  <a href="admin.html" class="cta">Admin</a>
+</header>
 
-  <!-- FLOATING WHATSAPP ICON -->
-  <a href="https://wa.me/254762457938"
-     target="_blank"
-     style="
-       position: fixed;
-       bottom: 20px;
-       right: 20px;
-       background: #25d366;
-       width: 58px;
-       height: 58px;
-       border-radius: 50%;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-       z-index: 9999;
-     ">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-         alt="WhatsApp"
-         style="width: 34px; height: 34px;" />
-  </a>
+<a href="tel:0762457938" class="kalro-call-btn">📞</a>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<div class="container">
+
+<h2>Available Livestock</h2>
+
+<div class="grid" id="productGrid"></div>
+
+<footer>
+  <div>
+    <strong>KALRO</strong><br>
+    Naivasha, Nakuru<br>
+    Phone: +254 762457938
+  </div>
+  <div>© <span id="year"></span> KALRO</div>
+</footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const grid = document.getElementById("productGrid");
+const items = JSON.parse(localStorage.getItem("items")) || [];
+
+if(items.length === 0){
+  grid.innerHTML = "<p>No livestock posted yet.</p>";
+}
+
+items.forEach(item => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="${item.img}">
+    <h4>${item.title}</h4>
+    <p>${item.desc}</p>
+    <div class="price">${item.price}</div>
+    <button class="buy-btn"
+      onclick="window.open('https://wa.me/254762457938?text=Hello I am interested in ${encodeURIComponent(item.title)}','_blank')">
+      BUY NOW
+    </button>
+  `;
+
+  grid.appendChild(card);
+});
+</script>
 
 </body>
 </html>
-
-
