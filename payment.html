@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KALRO — Payment</title>
 
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
 <style>
 body {
   font-family: system-ui, Arial;
@@ -34,7 +36,7 @@ label {
   font-weight: 600;
 }
 
-input, select {
+input {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
@@ -85,32 +87,28 @@ button:hover {
 
 <div class="summary">
   <h3>Order Summary</h3>
-  <p><strong>Item:</strong> <span id="itemTitle">Loading...</span></p>
-  <p><strong>Price:</strong> <span id="itemPrice">Loading...</span></p>
+  <p><strong>Item:</strong> <span id="itemTitle"></span></p>
+  <p><strong>Price:</strong> ₦<span id="itemPrice"></span></p>
 </div>
 
 <form id="paymentForm">
-  <label for="name">Full Name</label>
-  <input type="text" id="name" name="name" required placeholder="John Doe">
+  <label>Full Name</label>
+  <input type="text" id="name" required>
 
-  <label for="phone">Phone Number</label>
-  <input type="tel" id="phone" name="phone" required placeholder="+2547XXXXXXXX">
+  <label>Phone Number</label>
+  <input type="tel" id="phone" required>
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required placeholder="example@mail.com">
+  <label>Email</label>
+  <input type="email" id="email" required>
 
   <label>Payment Method</label>
   <div class="payment-option">
-    <input type="radio" id="mpesa" name="payment" value="M-Pesa" checked>
-    <label for="mpesa">M-Pesa</label>
+    <input type="radio" name="payment" value="paystack" checked>
+    <label>M-Pesa / Card (Paystack)</label>
   </div>
   <div class="payment-option">
-    <input type="radio" id="card" name="payment" value="Credit/Debit Card">
-    <label for="card">Credit/Debit Card</label>
-  </div>
-  <div class="payment-option">
-    <input type="radio" id="cod" name="payment" value="Cash on Delivery">
-    <label for="cod">Cash on Delivery</label>
+    <input type="radio" name="payment" value="cod">
+    <label>Cash on Delivery</label>
   </div>
 
   <button type="submit">Pay Now</button>
@@ -118,24 +116,45 @@ button:hover {
 </div>
 
 <script>
-// Get item info from query string
 const params = new URLSearchParams(window.location.search);
-const itemTitle = params.get("item") || "Unknown Item";
-const itemPrice = params.get("price") || "N/A";
+const itemTitle = params.get("item") || "Product";
+const itemPrice = params.get("price") || "0";
 
 document.getElementById("itemTitle").textContent = itemTitle;
 document.getElementById("itemPrice").textContent = itemPrice;
 
-// Handle form submission
 document.getElementById("paymentForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const email = document.getElementById("email").value;
-  const payment = document.querySelector('input[name="payment"]:checked').value;
 
-  alert(`Thank you ${name}!\nYou have chosen ${payment} to pay for ${itemTitle} (${itemPrice}).\nWe will contact you shortly.`);
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+
+  if (paymentMethod === "paystack") {
+    payWithPaystack(email, itemPrice);
+  } else {
+    alert(`Thank you ${name}! Your Cash on Delivery order has been placed.`);
+  }
 });
+
+function payWithPaystack(email, amount) {
+  let handler = PaystackPop.setup({
+    // key: 'pk_live_xxxxxxxxxxxxxxxx', // ✅ PUBLIC KEY ONLY
+    email: email,
+    amount: amount * 100,
+    currency: 'NGN',
+    ref: 'KALRO_' + Date.now(),
+    callback: function(response) {
+      alert('Payment successful! Reference: ' + response.reference);
+      // TODO: verify payment on backend
+    },
+    onClose: function() {
+      alert('Payment cancelled');
+    }
+  });
+
+  handler.openIframe();
+}
 </script>
 
 </body>
