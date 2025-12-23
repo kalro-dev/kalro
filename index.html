@@ -400,6 +400,28 @@ header{
 </div>
 
 <script>
+function payWithPaystack() {
+  let handler = PaystackPop.setup({
+    key: 'pk_live_69925490b72c2eb258d6e5d7d2e9f778761a0c03', // 🔑 Your PUBLIC Paystack key
+    email: 'customer@email.com',
+    amount: 5000 * 100, // amount in kobo (₦5000 = 500000)
+    currency: 'NGN',
+    ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+    callback: function(response) {
+      alert('Payment successful! Ref: ' + response.reference);
+      // You should verify payment on your server
+    },
+    onClose: function() {
+      alert('Payment cancelled');
+    }
+  });
+
+  handler.openIframe();
+}
+</script>
+
+          
+<script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const grid = document.getElementById("productGrid");
@@ -430,5 +452,6 @@ items.forEach(item => {
 
 </body>
 </html>
+
 
 
