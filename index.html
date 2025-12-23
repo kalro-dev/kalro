@@ -104,22 +104,24 @@ header{
   margin:auto;
   padding:24px;
 }
-</style>
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
-}
-</head>
-
-.card{
+  .card{
   background:white;
   padding:16px;
   border-radius:14px;
   box-shadow:0 8px 20px rgba(0,0,0,.08);
   text-align:center;
 }
+  .grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+</style>
+
+
+</head>
+
+
 <body>
   <div class="container">
 
@@ -161,11 +163,8 @@ header{
         <div class="grid">
           <div class="card">
             <img src="pu01.jfif" />
-            <button class="buy-btn"onclick="window.open('https://paystack.shop/pay/yjlze9bqzm">
-
-
-              BUY NOW
-
+            <button class="buy-btn"
+              onclick="payWithPaystack()"> Pay Now
 
             </button>
              <div class="price-tag">KSh 6k–10k • 3–5 months</div>
@@ -174,8 +173,7 @@ header{
           <div class="card">
             <img src="pu02.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://paystack.shop/pay/yjlze9bqzm">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
             <div class="price-tag">KSh 6k–10k • 3–5 months</div>
           </div>
@@ -189,16 +187,14 @@ header{
           <div class="card">
             <img src="je01.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Jersey%20Heifers','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
           </div>
 
           <div class="card">
             <img src="je02.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Jersey%20Heifers','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
           </div>
         </div>
@@ -211,16 +207,14 @@ header{
           <div class="card">
             <img src="fr01.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Freshian%20Heifers','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
           </div>
 
           <div class="card">
             <img src="fr02.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Freshian%20Heifers','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
           </div>
         </div>
@@ -233,16 +227,14 @@ header{
           <div class="card">
             <img src="fl01.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Fleckview%20Heifers','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
           </div>
 
           <div class="card">
             <img src="fl02.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Fleckview%20Heifers','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
           </div>
         </div>
@@ -255,8 +247,7 @@ header{
           <div class="card">
             <img src="ca1.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Calves','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
              <div>7-10 months 25k to 50k </div>
           </div>
@@ -264,8 +255,7 @@ header{
           <div class="card">
             <img src="ca2.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Calves','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
              <div>7-10 months 25k to 50k </div>
           </div>
@@ -288,8 +278,7 @@ header{
           <div class="card">
             <img src="pu01.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dorper%20Sheep','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
              <div>available 10k-50k</div>
           </div>
@@ -303,8 +292,7 @@ header{
           <div class="card">
             <img src="ha1.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Hampshire%20Sheep','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
             <div>3-5 months 6k-11k</div>
           </div>
@@ -312,8 +300,7 @@ header{
           <div class="card">
             <img src="ha1.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Hampshire%20Sheep','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
              <div>3-5 months 6k-11k</div>
           </div>
@@ -327,8 +314,7 @@ header{
           <div class="card">
             <img src="da1.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dairy%20Goats','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
              <div>11k to 30k </div>
           </div>
@@ -336,8 +322,7 @@ header{
           <div class="card">
             <img src="da02.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dairy%20Goats','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
              <div>11k to 30k </div>
           </div>
@@ -351,8 +336,7 @@ header{
           <div class="card">
             <img src="bo02.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Boer%20Goat','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()"> Pay Now
             </button>
               <div class="price-tag">*Boer Goats for Sale. 
 
@@ -370,8 +354,7 @@ header{
           <div class="card">
             <img src="pure lucerne 02.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Dairy%20Goats','_blank')">
-              BUY NOW
+              onclick="payWithPaystack()">  Pay Now
             </button>
             Pure Lucerne alfafa (25kg) bale @400/-farm price!
 -Pure bhoma Rhodes hay(18kg) bale @200/-farm price!
@@ -383,7 +366,7 @@ header{
            <div class="card">
             <img src="pure lucerne 02.jfif" />
             <button class="buy-btn"
-              onclick="window.open('https://wa.me/254762457938?text=Hello%20I%E2%80%99m%20interested%20in%20Boer%20Goat','_blank')">
+              onclick="payWithPaystack()">
               BUY NOW
             </button>
               <div class="price-tag">  Pure Lucerne alfafa (25kg) bale @400/-farm price!
@@ -400,6 +383,7 @@ header{
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
 
 <body>
 
@@ -446,4 +430,5 @@ items.forEach(item => {
 
 </body>
 </html>
+
 
