@@ -78,7 +78,7 @@ document.getElementById("itemPrice").textContent = itemPrice;
 // Paystack payment function
 function payWithPaystack() {
   let handler = PaystackPop.setup({
-     key: sk_live_69925490b72c2eb258d6e5d7d2e9f778761a0c03, // 🔑 Replace with your PUBLIC key
+     key: pk_live_5c73d3ff315f5091d1ce1a7216a479ec36939810, // 🔑 Replace with your PUBLIC key
     email: prompt("Enter your email for payment:"), // simple prompt for email
     amount: itemPrice * 100, // Paystack expects amount in cents
     currency: 'KES',
