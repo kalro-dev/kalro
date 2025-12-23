@@ -78,21 +78,138 @@ document.getElementById("itemPrice").textContent = itemPrice;
 // Paystack payment function
 function payWithPaystack() {
 
-  const email = prompt("Enter your email for payment:");
-  if (!email) {
-    alert("Email is required to continue.");
+  const phone = prompt("Enter your phone number for payment:");
+  if (!phone) {
+    alert("Phone number is required to continue.");
     return;
   }
 
   let handler = PaystackPop.setup({
     key: "pk_live_5c73d3ff315f5091d1ce1a7216a479ec36939810",
-    email: email,
+    email: phone + "@kalro.pay", // required by Paystack
     amount: itemPrice * 100,
     currency: "KES",
     ref: "KALRO_" + Date.now(),
     metadata: {
       custom_fields: [
-        { display_name: "Product", value: itemTitle }
+        { display_name: "Product", value: itemTitle },
+        { display_name: "Phone Number", value: phone }
+      ]
+    },
+    callback: function(response) {
+      alert("Payment successful! Reference: " + response.reference);
+      // TODO: verify payment on backend
+    },
+    onClose: function() {
+      alert("Payment cancelled");
+    }
+  });
+
+  handler.openIframe();
+}
+
+// Trigger Paystack when "Pay Now" button is clicked
+document.getElementById("payNowBtn").addEventListener("click", payWithPaystack);
+</script>
+
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KALRO — Payment</title>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<style>
+body {
+  font-family: system-ui, Arial;
+  background: linear-gradient(180deg,#fcfdf7,#eef7e5);
+  color: darkgreen;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 120px auto 40px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.1);
+}
+
+h2 { text-align: center; }
+
+.summary {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #35751a;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #3f7d22;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Complete Your Payment</h2>
+
+<div class="summary">
+  <h3>Order Summary</h3>
+  <p><strong>Item:</strong> <span id="itemTitle"></span></p>
+  <p><strong>Price:</strong> KSh <span id="itemPrice"></span></p>
+</div>
+
+<button id="payNowBtn">Pay Now</button>
+</div>
+
+<script>
+// Get product info from URL query parameters
+const params = new URLSearchParams(window.location.search);
+const itemTitle = params.get("item") || "Product";
+const itemPrice = Number(params.get("price")) || 0;
+
+document.getElementById("itemTitle").textContent = itemTitle;
+document.getElementById("itemPrice").textContent = itemPrice;
+
+// Paystack payment function
+function payWithPaystack() {
+
+  const phone = prompt("Enter your phone number for payment:");
+  if (!phone) {
+    alert("Phone number is required to continue.");
+    return;
+  }
+
+  let handler = PaystackPop.setup({
+    key: "pk_live_5c73d3ff315f5091d1ce1a7216a479ec36939810",
+    email: phone + "@kalro.pay", // required by Paystack
+    amount: itemPrice * 100,
+    currency: "KES",
+    ref: "KALRO_" + Date.now(),
+    metadata: {
+      custom_fields: [
+        { display_name: "Product", value: itemTitle },
+        { display_name: "Phone Number", value: phone }
       ]
     },
     callback: function(response) {
