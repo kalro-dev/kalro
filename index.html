@@ -86,14 +86,28 @@ header{
 }
 
 .buy-btn:hover{background:#3f7d22}
-
-footer{
-  margin-top:40px;
-  padding:24px;
-  border-top:1px solid #ddd;
-  display:flex;
-  justify-content:space-between;
+.site-footer{
+  width:100%;
+  background:#2f7d1f;
+  color:white;
+  font-weight:600;
+  padding:24px 0;
 }
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer-copy{
+  align-self:flex-end;
+}
+
   /* Floating WhatsApp & Call Buttons */
 .fab-container{
   position:fixed;
@@ -306,21 +320,21 @@ footer{
 
 </main>
 
-<footer style="background: green; width: 100%;padding-right: 20px; color: white; font-weight: 600; margin-left: -30px; margin-right: 0;">
-<div>
-<strong>KALRO</strong><br>
-Naivasha, Nakuru<br>
-Phone: +254 762457938
-<br>
-  Phone: 0208353695
-  <br>
-  <div>Whatsapp: +254 762457938</div>
-  <br>
-  <div>Email: info@Karlofarmkenya@gmail.com</div>
-  
-</div>
-<div>© <span id="year"></span> KALRO</div>
-  
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>KALRO</strong><br>
+      Naivasha, Nakuru<br>
+      Phone: +254 762457938<br>
+      Phone: 0208353695<br>
+      Whatsapp: +254 762457938<br>
+      Email: info@Karlofarmkenya@gmail.com
+    </div>
+
+    <div class="footer-copy">
+      © <span id="year"></span> KALRO
+    </div>
+  </div>
 </footer>
 
 </div>
@@ -341,6 +355,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </body>
 </html>
+
 
 
 
