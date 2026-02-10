@@ -147,6 +147,15 @@ header{
   padding:10px;
   margin-bottom:10px;
 }
+  .nav-links a{
+  background:none;
+  color:#000;
+  text-decoration:underline;
+  font-weight:600;
+  padding:0;
+  margin-left:12px;
+}
+
 </style>
 
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
@@ -168,11 +177,23 @@ header{
     </div>
   </div>
 
-  <nav class="nav-links">
-    <a style="background: transparent; color: black; text-decoration: underline;" href="#about">About Us</a>
-    <a style="background: transparent; color: black; text-decoration: underline;" href="#gallery">Gallery</a>
-    <a style="background: transparent; color: black; text-decoration: underline;" href="#contact">Contact Us</a>
-  </nav>
+<nav class="nav-links">
+  <a href="#about"
+     style="background:none;color:#000;text-decoration:underline;font-weight:600;padding:0;margin-left:12px;">
+     About Us
+  </a>
+
+  <a href="#gallery"
+     style="background:none;color:#000;text-decoration:underline;font-weight:600;padding:0;margin-left:12px;">
+     Gallery
+  </a>
+
+  <a href="#contact"
+     style="background:none;color:#000;text-decoration:underline;font-weight:600;padding:0;margin-left:12px;">
+     Contact Us
+  </a>
+</nav>
+
 </header>
 
   
@@ -546,6 +567,7 @@ Quantity: ${quantity}`;
 
 </body>
 </html>
+
 
 
 
